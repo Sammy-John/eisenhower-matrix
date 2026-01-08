@@ -6,7 +6,7 @@
 (https://sammy-john.github.io/eisenhower-matrix/)
 
 [🔗 **Launch the tool:**]  
-(https://sammy-john>.github.io/eisenhower-matrix/app/)
+(https://sammy-john>.github.io/eisenhower-matrix/app/index)
 
 ---
 

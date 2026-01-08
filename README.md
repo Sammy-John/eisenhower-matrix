@@ -2,11 +2,12 @@
 
 **A simple, focused tool for prioritising what actually matters.**
 
-🔗 **Landing page:**  
-https://<your-username>.github.io/eisenhower-matrix/
+[🔗 **Landing page:**]  
+(https://sammy-john.github.io/eisenhower-matrix/)
 
-🔗 **Launch the tool:**  
-https://<your-username>.github.io/eisenhower-matrix/app/
+[🔗 **Launch the tool:**]  
+([https://sammy-john>.github.io/eisenhower-matrix/app/](https://sammy-john.github.io/eisenhower-matrix/app/
+))
 
 ---
 

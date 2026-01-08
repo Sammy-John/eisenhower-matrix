@@ -1,0 +1,380 @@
+:root {
+  --bg: #0b1220;
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-strong: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.62);
+
+  --shadow: 0 14px 40px rgba(0,0,0,0.35);
+
+  /* Tag colors (your scheme) */
+  --light-blue: #76c7ff;   /* Light Build */
+  --deep-blue:  #1c3e9a;   /* Deep Build */
+  --open-green: #0e4f2f;   /* Open */
+  --learn-green:#33c26b;   /* Learning */
+  --plan-yellow:#b58900;   /* Planning (dark yellow) */
+
+  /* Eisenhower quadrant surfaces (post-it style) */
+--quad-do: rgba(28, 62, 154, 0.28);        /* Deep Blue */
+--quad-schedule: rgba(118, 199, 255, 0.22);/* Light Blue */
+--quad-delegate: rgba(181, 137, 0, 0.22);  /* Dark Yellow */
+--quad-eliminate: rgba(14, 79, 47, 0.32);  /* Dark Green */
+
+
+  --danger: #ff3b3b;
+  --danger-bg: rgba(255, 59, 59, 0.12);
+
+  --radius: 16px;
+  --radius-sm: 12px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background:
+    radial-gradient(1000px 600px at 15% 10%, rgba(118, 199, 255, 0.10), transparent 55%),
+    radial-gradient(900px 600px at 85% 20%, rgba(51, 194, 107, 0.10), transparent 55%),
+    radial-gradient(1200px 800px at 40% 120%, rgba(28, 62, 154, 0.12), transparent 60%),
+    var(--bg);
+  color: var(--text);
+}
+
+.app-header {
+  padding: 28px 22px 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.app-title h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 0.2px;
+}
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.tag-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.legend-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.06);
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 22px 110px; /* leave room for floating button */
+  display: grid;
+  gap: 14px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Task creation */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: end;
+}
+
+.field { display: grid; gap: 6px; }
+.field.grow { flex: 1 1 320px; }
+
+.label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+select, input {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  outline: none;
+}
+
+select:focus, input:focus {
+  border-color: rgba(118, 199, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(118, 199, 255, 0.12);
+}
+
+.hint {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* 2x2 grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 880px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.quadrant {
+  position: relative;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.18);
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.02)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
+.quadrant[data-zone="do"] {
+  background-color: var(--quad-do);
+}
+
+.quadrant[data-zone="schedule"] {
+  background-color: var(--quad-schedule);
+}
+
+.quadrant[data-zone="delegate"] {
+  background-color: var(--quad-delegate);
+}
+
+.quadrant[data-zone="eliminate"] {
+  background-color: var(--quad-eliminate);
+}
+
+
+.quad-head {
+  padding: 12px 14px;
+  background: rgba(0,0,0,0.18);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(4px);
+}
+
+.quad-head h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: 0.3px;
+}
+
+.quad-head p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+}
+
+
+.dropzone {
+  min-height: 150px;
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+/* Unassigned */
+.unassigned-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.muted { color: var(--muted); margin: 0; }
+
+/* Task cards */
+.task {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.05);
+  cursor: grab;
+  user-select: none;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease, opacity 120ms ease;
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.task:active { cursor: grabbing; transform: scale(0.995); }
+
+.task:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  border: 1px solid rgba(255,255,255,0.18);
+  white-space: nowrap;
+}
+
+.task-text {
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.done-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.04);
+}
+
+/* Completed state */
+.task.completed {
+  opacity: 0.62;
+  background: rgba(0,0,0,0.22);
+  border-color: rgba(255,255,255,0.10);
+}
+
+.task.completed .task-text {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(255,255,255,0.85);
+}
+
+.task.completed .done-indicator {
+  background: rgba(255,255,255,0.65);
+}
+
+/* Drop target visuals */
+.dropzone.drag-over {
+  outline: 3px dashed rgba(255,255,255,0.65);
+  outline-offset: -8px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.10) 8px,
+      rgba(255,255,255,0.02) 8px,
+      rgba(255,255,255,0.02) 16px
+    );
+}
+
+
+/* Buttons */
+.btn {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn.primary {
+  border-color: rgba(118, 199, 255, 0.35);
+  background: rgba(118, 199, 255, 0.10);
+}
+
+.btn.primary:hover {
+  background: rgba(118, 199, 255, 0.14);
+  border-color: rgba(118, 199, 255, 0.50);
+}
+
+/* Floating danger CTA */
+.btn.danger {
+  border-color: rgba(255,59,59,0.55);
+  background: var(--danger-bg);
+  box-shadow: 0 18px 55px rgba(0,0,0,0.45);
+}
+
+.btn.danger:hover {
+  background: rgba(255, 59, 59, 0.18);
+  border-color: rgba(255,59,59,0.72);
+}
+
+.btn.floating {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 14px;
+  z-index: 10;
+}
+
+/* Tag badge colors (high contrast + readable) */
+.tag-light { background: rgba(118, 199, 255, 0.16); border-color: rgba(118, 199, 255, 0.45); }
+.tag-deep  { background: rgba(28, 62, 154, 0.35);  border-color: rgba(28, 62, 154, 0.70); }
+.tag-open  { background: rgba(14, 79, 47, 0.42);   border-color: rgba(14, 79, 47, 0.80); }
+.tag-learning { background: rgba(51, 194, 107, 0.18); border-color: rgba(51, 194, 107, 0.55); }
+.tag-planning { background: rgba(181, 137, 0, 0.22); border-color: rgba(181, 137, 0, 0.65); }
+

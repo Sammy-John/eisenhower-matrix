@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eisenhower Matrix — Prioritise what matters</title>
+  <meta name="description" content="A lightweight Eisenhower Matrix tool to sort tasks by urgency and importance — fast, local-first, and distraction-free." />
+
+  <!-- Open Graph (optional but useful for sharing) -->
+  <meta property="og:title" content="Eisenhower Matrix — Prioritise what matters" />
+  <meta property="og:description" content="A lightweight Eisenhower Matrix tool — fast, local-first, and distraction-free." />
+  <meta property="og:type" content="website" />
+  <!-- If you later add an og image, place it at docs/assets/og/og-home.png and update this -->
+  <!-- <meta property="og:image" content="assets/og/og-home.png" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true">E</div>
+        <div class="brand__text">
+          <div class="brand__name">Eisenhower Matrix</div>
+          <div class="brand__tag">Prioritise what matters</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--soft" href="./app/">Open app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Lightweight • Local-first • Fast</p>
+          <h1>Stop treating everything as urgent.</h1>
+          <p class="lede">
+            Sort tasks by <strong>importance</strong> and <strong>urgency</strong> with a clean Eisenhower Matrix —
+            so the real work doesn’t get buried.
+          </p>
+
+          <div class="cta">
+            <a class="btn btn--primary" href="../app/index.html">Launch the tool</a>
+            <a class="btn btn--ghost" href="#how">See how it works</a>
+          </div>
+
+          <div class="trust">
+            <div class="pill">No account</div>
+            <div class="pill">Runs in browser</div>
+            <div class="pill">Saves locally</div>
+          </div>
+        </div>
+
+        <div class="hero__preview" aria-label="App preview">
+          <figure class="app-shot">
+            <img
+              src="eisenhower-matrix.webp"
+              alt="Eisenhower Matrix app preview showing four priority quadrants"
+              loading="eager"
+            />
+            <figcaption>
+              A lightweight Eisenhower Matrix — no accounts, no clutter.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>How the matrix works</h2>
+          <p class="muted">Two questions. Four outcomes. Less noise.</p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <h3>1) Is it important?</h3>
+            <p class="muted">Does it move the needle? Does it matter next week?</p>
+          </article>
+          <article class="card">
+            <h3>2) Is it urgent?</h3>
+            <p class="muted">Does it need action now, or can it wait without consequences?</p>
+          </article>
+          <article class="card">
+            <h3>3) Place the task</h3>
+            <p class="muted">Drop it into one of the four quadrants and commit to the action.</p>
+          </article>
+          <article class="card">
+            <h3>4) Act accordingly</h3>
+            <p class="muted"><strong>Do</strong>, <strong>Schedule</strong>, <strong>Delegate</strong>, or <strong>Delete</strong>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2>Built for speed and clarity</h2>
+          <p class="muted">A tool that stays out of your way.</p>
+        </div>
+
+        <div class="grid2">
+          <article class="card card--feature">
+            <div class="icon" aria-hidden="true">⚡</div>
+            <div>
+              <h3>Fast capture</h3>
+              <p class="muted">Add tasks quickly and keep momentum. No setup, no friction.</p>
+            </div>
+          </article>
+
+          <article class="card card--feature">
+            <div class="icon" aria-hidden="true">🔒</div>
+            <div>
+              <h3>Local-first</h3>
+              <p class="muted">Your tasks stay in your browser (localStorage). No account required.</p>
+            </div>
+          </article>
+
+          <article class="card card--feature">
+            <div class="icon" aria-hidden="true">🧭</div>
+            <div>
+              <h3>Decision-driven</h3>
+              <p class="muted">The matrix forces a choice: do it, schedule it, delegate it, or delete it.</p>
+            </div>
+          </article>
+
+          <article class="card card--feature">
+            <div class="icon" aria-hidden="true">🧩</div>
+            <div>
+              <h3>Extensible</h3>
+              <p class="muted">Built as a simple base — easy to iterate: drag/drop, export, shortcuts, themes.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="center">
+          <a class="btn btn--primary" href="./app/">Launch the tool</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>FAQ</h2>
+          <p class="muted">Quick answers.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item" open>
+            <summary>Do I need an account?</summary>
+            <p class="muted">No. It runs entirely in your browser.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Where does my data go?</summary>
+            <p class="muted">Tasks are saved locally in your browser using localStorage.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can I use this on mobile?</summary>
+            <p class="muted">Yes — the landing page is responsive, and the app can be designed mobile-first too.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Can I export my tasks?</summary>
+            <p class="muted">Not yet, but export/import (JSON) is a strong candidate for the next iteration.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--cta">
+      <div class="container ctaBanner">
+        <div>
+          <h2>Ready to clear the noise?</h2>
+          <p class="muted">Open the matrix and prioritise with intent.</p>
+        </div>
+        <div class="ctaBanner__actions">
+          <a class="btn btn--primary" href="./app/">Open the app</a>
+          <a class="btn btn--soft" href="#how">How it works</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="brand brand--small">
+          <div class="brand__mark" aria-hidden="true">E</div>
+          <div class="brand__text">
+            <div class="brand__name">Eisenhower Matrix</div>
+            <div class="brand__tag">Focus, not bloat.</div>
+          </div>
+        </div>
+        <p class="muted small">Built as a small, focused tool. Hosted on GitHub Pages.</p>
+      </div>
+
+      <div class="footer__right">
+        <a href="./app/">Open app</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

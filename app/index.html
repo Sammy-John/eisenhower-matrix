@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eisenhower Scratchpad</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <div class="app-title">
+      <h1>Eisenhower Scratchpad</h1>
+      <p class="subtitle">Drag tasks into a quadrant. Click to complete. Clear completed daily.</p>
+    </div>
+
+    <div class="tag-legend" aria-label="Tag colors legend">
+      <span class="legend-pill tag-light">Light Build</span>
+      <span class="legend-pill tag-deep">Deep Build</span>
+      <span class="legend-pill tag-open">Open</span>
+      <span class="legend-pill tag-learning">Learning</span>
+      <span class="legend-pill tag-planning">Planning</span>
+    </div>
+  </header>
+
+  <main class="app">
+    <!-- Task Creation -->
+    <section class="panel create-panel" aria-label="Task creation">
+      <h2>Task Creation</h2>
+
+      <form id="taskForm" class="task-form">
+        <label class="field">
+          <span class="label">Tag</span>
+          <select id="taskTag" required>
+            <option value="light">Light Build</option>
+            <option value="deep">Deep Build</option>
+            <option value="open">Open</option>
+            <option value="learning">Learning</option>
+            <option value="planning">Planning</option>
+          </select>
+        </label>
+
+        <label class="field grow">
+          <span class="label">Task</span>
+          <input
+            id="taskText"
+            type="text"
+            placeholder="One sentence max…"
+            maxlength="120"
+            autocomplete="off"
+            required
+          />
+        </label>
+
+        <button class="btn primary" type="submit">Add</button>
+      </form>
+
+      <div class="hint">
+        Tip: keep tasks small. If it needs paragraphs, it’s not a task — it’s a plan.
+      </div>
+    </section>
+
+    <!-- 2x2 Grid -->
+    <section class="panel grid-panel" aria-label="Eisenhower grid">
+      <h2>2×2 Grid</h2>
+
+      <div class="grid">
+        <section class="quadrant" data-zone="do" aria-label="Do: Important and Urgent">
+          <header class="quad-head">
+            <h3>Do</h3>
+            <p>Important + Urgent</p>
+          </header>
+          <div class="dropzone" data-zone="do"></div>
+        </section>
+
+        <section class="quadrant" data-zone="schedule" aria-label="Schedule: Important and Not Urgent">
+          <header class="quad-head">
+            <h3>Schedule</h3>
+            <p>Important + Not Urgent</p>
+          </header>
+          <div class="dropzone" data-zone="schedule"></div>
+        </section>
+
+        <section class="quadrant" data-zone="delegate" aria-label="Delegate: Not Important and Urgent">
+          <header class="quad-head">
+            <h3>Delegate</h3>
+            <p>Not Important + Urgent</p>
+          </header>
+          <div class="dropzone" data-zone="delegate"></div>
+        </section>
+
+        <section class="quadrant" data-zone="eliminate" aria-label="Eliminate: Not Important and Not Urgent">
+          <header class="quad-head">
+            <h3>Eliminate</h3>
+            <p>Not Important + Not Urgent</p>
+          </header>
+          <div class="dropzone" data-zone="eliminate"></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Unassigned Tasks -->
+    <section class="panel unassigned-panel" aria-label="Unassigned tasks">
+      <div class="unassigned-head">
+        <h2>Unassigned Tasks</h2>
+        <p class="muted">New tasks land here. Drag into a quadrant.</p>
+      </div>
+      <div class="dropzone unassigned-zone" data-zone="unassigned"></div>
+    </section>
+  </main>
+
+  <!-- Clear Completed -->
+  <button id="clearCompletedBtn" class="btn danger floating" type="button" title="Clear all completed tasks">
+    Clear Completed
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
